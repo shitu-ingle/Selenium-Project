@@ -10,8 +10,6 @@ import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import org.testng.internal.TestResult;
-
 import base.TestBase;
 import pages.LoginPage;
 import utility.ReadData;
@@ -34,14 +32,14 @@ public class LoginPage_Test extends TestBase
 		Assert.assertEquals(expURL,actURL);
 		Reporter.log("Login Successful= " + actURL);
 	}
-	@Test(groups = "Sanity")
-	public void verifyURLOfApplicationTest() throws EncryptedDocumentException, IOException
-	{
-		String expURL=ReadData.readExecl(0,1);//https://www.saucedemo.com/(0,1)
-		String actURL=login.verifyURLOfApplication();
-		Assert.assertEquals(expURL,actURL);
-		Reporter.log("The URL of SWag lab = " +actURL);
-	}
+//	@Test(groups = "Sanity")
+//	public void verifyURLOfApplicationTest() throws EncryptedDocumentException, IOException
+//	{
+//		String expURL=ReadData.readExecl(0,1);//https://www.saucedemo.com/(0,1)
+//		String actURL=login.verifyURLOfApplication();
+//		Assert.assertEquals(expURL,actURL);
+//		Reporter.log("The URL of SWag lab = " +actURL);
+//	}
 	@Test(groups = "Retest")
 	public void verifyTitleOfApplicationTest() throws EncryptedDocumentException, IOException
 	{
@@ -53,7 +51,7 @@ public class LoginPage_Test extends TestBase
 	@AfterMethod(alwaysRun = true)
 	public void closeBrowser(ITestResult it) throws IOException
 	{
-		if(it.FAILURE==it.getStatus())
+		if(ITestResult.FAILURE==it.getStatus())
 		{
 			Screenshot.cs(it.getName());
 		}

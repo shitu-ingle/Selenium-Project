@@ -1,6 +1,5 @@
 package utility;
 
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -17,13 +16,13 @@ public class Extent_Reports extends TestBase
 		if(report==null)
 		{
 			String reportName=new SimpleDateFormat("dd-MM-YYYY ss-mm-HH").format(new Date());
-			ExtentHtmlReporter htmlReporter=new ExtentHtmlReporter("C:\\Users\\tanuja\\eclipse-workspace\\14March_Selenium_Framework\\Extent Reports"+reportName+".html");
+			ExtentHtmlReporter htmlReporter=new ExtentHtmlReporter("C:\\Users\\Dell\\Desktop\\SsquareIT\\vedios\\14March_Selenium_Framework\\Extent Reports"+reportName+".html");
 			report=new ExtentReports();
 			report.attachReporter(htmlReporter);
 			report.setSystemInfo("OS","Windows"); 
 			report.setSystemInfo("Environmnet","SIT"); 
 			report.setSystemInfo("Build","102.02.02.123");
-			report.setSystemInfo("Browser","chrome"); 
+			report.setSystemInfo("Browser","edge"); 
 			htmlReporter.config().setDocumentTitle("UI Testing Documents"); 
 			htmlReporter.config().setReportName("UI Test Report");
 		}
